@@ -1,0 +1,14 @@
+[Unit]
+Description=Pull SME site sources and rebuild if changed
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=sme
+Group=sme
+ExecStart=/var/lib/sme/sjsu-sme/deploy/sync.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/sme /var/www

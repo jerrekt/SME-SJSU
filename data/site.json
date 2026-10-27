@@ -1,0 +1,61 @@
+{
+  "name": "SME San Jose State",
+  "chapter": "Society of Manufacturing Engineers · Student Chapter S192",
+  "hostname": "sjsu-sme.adsuaracloud.com",
+  "tagline": "SME San Jose State University (Chapter S192) is a student club dedicated to advancing interest in manufacturing. We connect Spartans with industry through facility tours, career speakers, and hands-on projects, open to every major.",
+  "what_we_do": [
+    ["Industry tours", "see real production floors and labs across the Bay Area."],
+    ["Speaker events", "hear from engineers about careers in manufacturing and beyond."],
+    ["Independent projects", "get support for projects you want to build outside of class."],
+    ["Community", "meet students who like making things."]
+  ],
+  "mission": [
+    "Support students who wish to pursue independent projects outside of class.",
+    "Provide speaking events to educate students on careers in manufacturing and beyond.",
+    "Connect students with Bay Area manufacturers through tours and networking."
+  ],
+  "about_sme": "SME is a professional association that supports the manufacturing industry through education, training, and events. Student chapters give members access to SME resources, networking, and scholarships.",
+  "club_presentation_url": null,
+  "projects_intro": "SME San Jose State supports members who want to design and build independent projects outside of class. Bring an idea, find teammates, and get guidance from the Project Lead and our faculty advisor.",
+  "pitch_video_youtube_id": null,
+  "pitch_video_title": "Project Pitch, Fall 2026",
+  "spartan_signs": {
+    "summary": "A smart LED sign of the SJSU Spartan helmet, plus the production process to make more of them, built by SME members. You switch a sign on or off, set its colors and schedule it from a web page.",
+    "how_it_works": [
+      ["The sign", "The Spartan helmet logo lit by LEDs in three color zones: white, blue and gold. An ESP32-C6 inside each sign runs WLED, an open-source LED controller."],
+      ["The control site", "Sign in, add a sign with the code on its sticker, then set brightness, effects, colors and a nightly schedule, share it, or open a support ticket."],
+      ["The accounts", "Anyone can sign in, not only @sjsu.edu. Owners (a person, a department or a club) can share their sign with others and remove them again."]
+    ],
+    "teams": [
+      ["Design Team", null],
+      ["Electronics Team", "The ESP32-C6 and the LED electronics. Lead: Branden Adsuara"],
+      ["Robotics Team", "Automating how the signs are made"],
+      ["Business Team", null],
+      ["Research and Development", "Sub-team"]
+    ],
+    "licensing": "The Spartan logo is used with SJSU licensing approval, arranged through the club's advisor.",
+    "repo": "https://github.com/jerrekt/Spartan-signs"
+  },
+  "join": {
+    "intro": "Membership is open to all SJSU students, no matter your major. Come to a meeting or event to get started.",
+    "steps": [
+      ["Fill out the interest form.", null],
+      ["Register with the club on SJSU's student organization site.", null],
+      ["Sign up for an SME student membership.", null],
+      ["Join our group chat on Discord.", null]
+    ]
+  },
+  "sponsors": {
+    "intro": "Our tours, speakers, and projects are made possible by companies that invest in the next generation of manufacturing engineers. Thank you to our partners.",
+    "ask": "Interested in hosting a tour, speaking at a meeting, or supporting student projects? We would love to hear from you.",
+    "partners": []
+  },
+  "contact": {
+    "email": null,
+    "instagram": "sjsu_sme",
+    "discord_url": null,
+    "meetings": null,
+    "advisor": "David Yan",
+    "advisor_email": "david.yan@sjsu.edu"
+  }
+}

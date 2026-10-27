@@ -1,0 +1,26 @@
+# Copy to /etc/pve/firewall/<CTID>.fw on the Proxmox host. Replace GATEWAY_IP with the router.
+[OPTIONS]
+enable: 1
+policy_in: DROP
+policy_out: DROP
+dhcp: 1
+macfilter: 1
+ndp: 0
+radv: 0
+
+[RULES]
+# DNS to the router only
+OUT ACCEPT -dest GATEWAY_IP -p udp -dport 53
+OUT ACCEPT -dest GATEWAY_IP -p tcp -dport 53
+# Never talk to anything else on the LAN
+OUT DROP -dest 10.0.0.0/8
+OUT DROP -dest 172.16.0.0/12
+OUT DROP -dest 192.168.0.0/16
+OUT DROP -dest 100.64.0.0/10
+# Internet: GitHub and package mirrors (HTTPS), GitHub SSH, time, Cloudflare tunnel
+OUT ACCEPT -p tcp -dport 443
+OUT ACCEPT -p tcp -dport 22
+OUT ACCEPT -p udp -dport 123
+OUT ACCEPT -p tcp -dport 7844
+OUT ACCEPT -p udp -dport 7844
+OUT ACCEPT -p tcp -dport 80

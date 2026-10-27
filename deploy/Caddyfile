@@ -1,0 +1,28 @@
+# /etc/caddy/Caddyfile
+# Listens on localhost only. Cloudflare Tunnel is the only way in (no open ports).
+{
+	auto_https off
+}
+
+http://127.0.0.1:8080 {
+	bind 127.0.0.1
+	root * /var/www/sjsu-sme
+	encode gzip
+	file_server
+
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; frame-src https://www.youtube-nocookie.com; base-uri 'none'; form-action 'none'"
+		-Server
+	}
+
+	@dotfiles path */.*
+	respond @dotfiles 404
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}

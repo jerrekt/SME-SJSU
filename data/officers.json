@@ -1,0 +1,12 @@
+{
+  "season": "2026–2027",
+  "officers": [
+    {"role": "President", "name": "Landen Ross", "email": "landen.ross@sjsu.edu"},
+    {"role": "Vice President", "name": "Pedro Alvarez", "email": "pedro.alvarez@sjsu.edu"},
+    {"role": "Treasurer", "name": "Kevin Nguyen", "email": "kevin.t.nguyen011@sjsu.edu"},
+    {"role": "Secretary", "name": "Robert Reyes", "email": "robert.reyes@sjsu.edu"},
+    {"role": "Social Operations", "name": "Gage Watts", "email": "gage.watts@sjsu.edu"},
+    {"role": "Project Lead", "name": "Mahad Jama", "email": "mahad.jama@sjsu.edu"}
+  ],
+  "advisor": {"name": "David Yan", "dept": "Department of Aviation and Technology", "email": "david.yan@sjsu.edu"}
+}

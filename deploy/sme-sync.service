@@ -9,6 +9,5 @@ User=sme
 Group=sme
 ExecStart=/var/lib/sme/sjsu-sme/deploy/sync.sh
 NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=strict
-ReadWritePaths=/var/lib/sme /var/www
+# Mount-namespace sandboxing (ProtectSystem, PrivateTmp) is left out on purpose:
+# it fails inside an unprivileged LXC without nesting. The container is the sandbox.

@@ -1,11 +1,11 @@
 # /etc/caddy/Caddyfile
-# Listens on localhost only. Cloudflare Tunnel is the only way in (no open ports).
+# Listens on loopback only (IPv4 and IPv6: cloudflared can reach it over ::1). Cloudflare Tunnel is the only way in (no open ports).
 {
 	auto_https off
 }
 
-http://127.0.0.1:8080 {
-	bind 127.0.0.1
+http://:8080 {
+	bind 127.0.0.1 ::1
 	root * /var/www/sjsu-sme
 	encode gzip
 	file_server

@@ -55,7 +55,7 @@ You need: a Proxmox host, a free Cloudflare account, and a domain on Cloudflare 
    ```bash
    cloudflared service install PASTE_TOKEN_HERE
    ```
-5. In the tunnel's **Public Hostname** tab add your hostname (for example `sme.yourdomain.org`) with service **HTTP**, URL `localhost:8080`.
+5. In the tunnel's **Public Hostname** tab add your hostname (for example `sme.yourdomain.org`) with service **HTTP**, URL `127.0.0.1:8080`.
 6. Open the hostname in a browser. Done.
 
 ## 4. Changing the domain later
@@ -109,11 +109,13 @@ Test a change on your own computer without a server (needs Python 3):
 python3 build/build.py     # writes dist/; open dist/index.html in a browser
 ```
 
+If a change is live but the browser shows the old page, purge the cache in Cloudflare (Caching, Configuration, Purge Everything).
+
 The footer of every page shows the build time and the commit IDs, so you can tell whether a change went live.
 
 ## 9. Rules to keep it safe
 
-- Never put passwords, keys or tokens in the repo. It is public.
+- Never put passwords, keys or tokens in the repo or in chat. It is public. The tunnel token is stored root-only inside the container, so only give root to people who need it.
 - Do not open ports on the router. The tunnel is the only way in.
 - Do not publish anyone's phone number or personal email. Officer school emails are fine with their consent.
 - Keep dependencies at zero. If you add a tool, someone has to maintain it every year.

@@ -40,7 +40,7 @@ if [ -n "${CF_TUNNEL_TOKEN:-}" ]; then
   apt-get update -qq && apt-get install -y -qq cloudflared
   cloudflared service uninstall >/dev/null 2>&1 || true
   cloudflared service install "$CF_TUNNEL_TOKEN"
-  echo "Tunnel installed. In Cloudflare Zero Trust, set the tunnel's public hostname to HTTP  localhost:8080"
+  echo "Tunnel installed. In Cloudflare Zero Trust, set the tunnel's public hostname to HTTP  127.0.0.1:8080"
 else
   echo "No CF_TUNNEL_TOKEN given: site is only on 127.0.0.1:8080. See HANDOVER.md step 3 to connect Cloudflare."
 fi

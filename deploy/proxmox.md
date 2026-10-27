@@ -34,9 +34,11 @@ git clone https://github.com/jerrekt/SME-SJSU.git /root/sjsu-sme
 CF_TUNNEL_TOKEN=PASTE_TOKEN_HERE bash /root/sjsu-sme/deploy/setup-lxc.sh
 ```
 
-In Cloudflare Zero Trust, the tunnel's public hostname for `sjsu-sme.adsuaracloud.com` points to **HTTP `localhost:8080`**.
+In Cloudflare Zero Trust, the tunnel's public hostname for `sjsu-sme.adsuaracloud.com` points to **HTTP `127.0.0.1:8080`**.
 
 ## 4. Check
+
+Also test IPv6, where firewalls often leak. From inside the container, `ip -6 addr` should show no address you can reach other machines with. Pinging a LAN or link-local IPv6 address must fail.
 
 ```bash
 curl -s http://127.0.0.1:8080 | head -5
@@ -46,4 +48,4 @@ journalctl -u sme-sync -n 10 --no-pager
 
 ## Giving someone access without giving them Kratos
 
-Create a Proxmox user with the `PVEPoolUser` role on `/pool/sjsu/sme` only. They see and manage this container and nothing else. Do not share Tailscale access to the node.
+Create a Proxmox user with the `PVEPoolUser` role on `/pool/sjsu/sme` only. They see and manage this container and nothing else. Never grant it on `/pool/sjsu` or higher: permissions pass down and would also expose `sjsu/senior`. Do not share Tailscale access to the node.

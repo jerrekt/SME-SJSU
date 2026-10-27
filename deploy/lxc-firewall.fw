@@ -17,6 +17,8 @@ OUT DROP -dest 10.0.0.0/8
 OUT DROP -dest 172.16.0.0/12
 OUT DROP -dest 192.168.0.0/16
 OUT DROP -dest 100.64.0.0/10
+OUT DROP -dest fe80::/10
+OUT DROP -dest fc00::/7
 # Internet: GitHub and package mirrors (HTTPS), GitHub SSH, time, Cloudflare tunnel
 OUT ACCEPT -p tcp -dport 443
 OUT ACCEPT -p tcp -dport 22

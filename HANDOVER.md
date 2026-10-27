@@ -74,11 +74,9 @@ The code lives at `github.com/jerrekt/SME-SJSU`, BJ's account. Move it to the cl
 
 ## 6. The Spartan Signs section
 
-The Spartan Signs page is the club's project, hosted separately at its own address, and this site only links to it.
-It gets live info from two places:
-
-- The public repo `jerrekt/Spartan-signs`: the "Latest updates" list. If the repo moves, set `SIGNS_REPO` in `/etc/sme/sme.env`.
-- BJ's private notes (Mnemosyne): status text and the screenshot. **You will not have access to these.** The handover container ships with `MNEMO_ENABLED=0`, so the site uses the fallback text in `data/site.json`. Update that text by hand, or point the build at a new source.
+The Spartan Signs page is the club's project. The sign control site is hosted separately and this site only links to it.
+Edit the status, Done/Next lists, details and photo caption in `data/site.json` under `spartan_signs`. The photo is `static/spartan-sign-control.webp`.
+The "Latest updates" list is pulled live from the public repo `jerrekt/Spartan-signs`. If that repo moves, set `SIGNS_REPO` in `/etc/sme/sme.env`.
 
 ## 7. Yearly handoff checklist
 

@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 # One-time setup inside a fresh Debian 12 LXC. Run as root:  bash setup-lxc.sh
-# It installs everything, creates the 1-minute sync, and (optionally) the Cloudflare tunnel.
+# It installs everything, creates the 1-minute sync, and (optionally) the Cloudflare tunnel. No keys or private repos are needed.
 set -euo pipefail
 [ "$(id -u)" = 0 ] || { echo "run as root"; exit 1; }
 HERE=$(cd "$(dirname "$0")" && pwd)
 SITE_REPO=${SITE_REPO:-https://github.com/jerrekt/SME-SJSU.git}
 SIGNS_REPO=${SIGNS_REPO:-https://github.com/jerrekt/Spartan-signs.git}
-MNEMO_ENABLED=${MNEMO_ENABLED:-0}
-MNEMO_REPO=${MNEMO_REPO:-git@github.com:jerrekt/mnemosyne.git}
 
 apt-get update -qq
 apt-get install -y -qq git python3 caddy curl openssh-client util-linux ca-certificates
@@ -20,28 +18,11 @@ install -d -m 755 /etc/sme
 SITE_REPO=$SITE_REPO
 SITE_BRANCH=main
 SIGNS_REPO=$SIGNS_REPO
-MNEMO_ENABLED=$MNEMO_ENABLED
-MNEMO_REPO=$MNEMO_REPO
-MNEMO_KEY=/var/lib/sme/.ssh/mnemosyne_deploy
 EOF
 
 as_sme() { runuser -u sme -- "$@"; }
 [ -d /var/lib/sme/sjsu-sme/.git ] || as_sme git clone --depth 20 "$SITE_REPO" /var/lib/sme/sjsu-sme
 [ -d /var/lib/sme/spartan-signs/.git ] || as_sme git clone --depth 20 "$SIGNS_REPO" /var/lib/sme/spartan-signs
-
-if [ "$MNEMO_ENABLED" = 1 ] && [ ! -d /var/lib/sme/mnemosyne/.git ]; then
-  as_sme mkdir -p -m 700 /var/lib/sme/.ssh
-  [ -f /var/lib/sme/.ssh/mnemosyne_deploy ] || as_sme ssh-keygen -q -t ed25519 -N "" -C "sme-lxc-readonly" -f /var/lib/sme/.ssh/mnemosyne_deploy
-  echo; echo "Add this as a READ-ONLY deploy key on the Mnemosyne repo (GitHub > Settings > Deploy keys):"; echo
-  cat /var/lib/sme/.ssh/mnemosyne_deploy.pub; echo
-  read -rp "Press Enter once the key is added... " _
-  as_sme env GIT_SSH_COMMAND="ssh -i /var/lib/sme/.ssh/mnemosyne_deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
-    git clone --depth 1 --filter=blob:none --no-checkout "$MNEMO_REPO" /var/lib/sme/mnemosyne
-  # Only these paths are ever checked out. Everything else in the vault stays on GitHub.
-  as_sme git -C /var/lib/sme/mnemosyne sparse-checkout set --no-cone \
-    /projects/sjsu.md /projects/sme.md /projects/spartan-sign.md /images/spartan-sign-control.webp
-  as_sme git -C /var/lib/sme/mnemosyne checkout main
-fi
 
 install -m 644 /var/lib/sme/sjsu-sme/deploy/Caddyfile /etc/caddy/Caddyfile
 install -m 644 /var/lib/sme/sjsu-sme/deploy/sme-sync.service /etc/systemd/system/

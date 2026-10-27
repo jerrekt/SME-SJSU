@@ -2,11 +2,9 @@
 """Build the SME San Jose State static site.
 
 Inputs
-  data/*.json                 club-owned content (officers, events, site text)
-  $MNEMO_DIR                  sparse checkout of the Mnemosyne vault. ONLY the notes in
-                              MNEMO_ALLOW are read, and only if their front matter says
-                              `public: true`. Anything else in the vault is never touched.
-  $SIGNS_DIR                  clone of jerrekt/Spartan-signs (public repo)
+  data/*.json                 club-owned content (officers, events, site text, project status)
+  static/                     css and images copied as-is
+  $SIGNS_DIR                  clone of jerrekt/Spartan-signs (public repo), for "Latest updates"
 Output
   $OUT_DIR                    plain HTML/CSS, served by Caddy
 """
@@ -22,14 +20,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
-MNEMO = Path(os.environ.get("MNEMO_DIR", "/var/lib/sme/mnemosyne"))
 SIGNS = Path(os.environ.get("SIGNS_DIR", "/var/lib/sme/spartan-signs"))
 OUT = Path(os.environ.get("OUT_DIR", ROOT / "dist"))
 TZ = ZoneInfo("America/Los_Angeles")
-
-# The only vault files this site may read (user rule: Spartan Signs + SJSU only).
-MNEMO_ALLOW = ["projects/sjsu.md", "projects/sme.md", "projects/spartan-sign.md"]
-MNEMO_ASSETS = ["images/spartan-sign-control.webp"]
 
 NAV = [
     ("Home", "/"),
@@ -46,77 +39,6 @@ e = html.escape
 
 def load_json(name):
     return json.loads((ROOT / "data" / name).read_text(encoding="utf-8"))
-
-
-# ---------- vault notes (public only) ----------
-def parse_front_matter(text):
-    m = re.match(r"---\n(.*?)\n---\n?(.*)", text, re.S)
-    if not m:
-        return {}, text
-    fm = {}
-    for line in m.group(1).splitlines():
-        if ":" not in line or line.startswith((" ", "\t")):
-            continue
-        k, v = line.split(":", 1)
-        v = v.strip()
-        try:
-            if v.startswith(("[", '"')):
-                v = json.loads(v)
-            elif v in ("true", "false"):
-                v = v == "true"
-        except ValueError:
-            v = v.strip('"')
-        fm[k.strip()] = v
-    return fm, m.group(2)
-
-
-def load_note(rel):
-    if rel not in MNEMO_ALLOW:
-        raise SystemExit(f"refusing to read {rel}: not on the allowlist")
-    p = MNEMO / rel
-    if not p.is_file():
-        print(f"warn: {rel} missing, section will be skipped", file=sys.stderr)
-        return None
-    fm, body = parse_front_matter(p.read_text(encoding="utf-8"))
-    if fm.get("public") is not True:
-        print(f"warn: {rel} is not public: true, skipping", file=sys.stderr)
-        return None
-    return {"fm": fm, "body": body}
-
-
-def section(body, heading):
-    m = re.search(rf"^## {re.escape(heading)}\n(.*?)(?=^## |\Z)", body, re.S | re.M)
-    return m.group(1).strip() if m else ""
-
-
-def inline(s):
-    s = e(s)
-    s = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", s)
-    s = re.sub(r"\[\[([^\]]+)\]\]", r"\1", s)
-    s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
-    s = re.sub(r"`(.+?)`", r"<code>\1</code>", s)
-    s = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", r'<a href="\2">\1</a>', s)
-    return s
-
-
-def md_basic(md):
-    out, items = [], []
-
-    def flush():
-        if items:
-            out.append("<ul class=\"plain\">" + "".join(f"<li>{inline(i)}</li>" for i in items) + "</ul>")
-            items.clear()
-
-    for line in md.splitlines():
-        if line.startswith("- "):
-            items.append(line[2:])
-        elif line.strip():
-            flush()
-            out.append(f"<p>{inline(line)}</p>")
-        else:
-            flush()
-    flush()
-    return "\n".join(out)
 
 
 # ---------- Spartan-signs repo ----------
@@ -152,7 +74,7 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
     )
     sub = f"<p>{e(hero_sub)}</p>" if hero_sub else ""
     small = "" if slug == "" else " small"
-    heads = f"{git_head(ROOT)}/{git_head(SIGNS)}/{git_head(MNEMO)}"
+    heads = f"{git_head(ROOT)}/{git_head(SIGNS)}"
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -214,35 +136,24 @@ def build():
     officers = load_json("officers.json")
     up, past = split_events(now)
 
-    sme = load_note("projects/sme.md")
-    sjsu = load_note("projects/sjsu.md")
-    sign = load_note("projects/spartan-sign.md")
-    sign_fm = sign["fm"] if sign else {}
-    live = sign_fm.get("link") or "https://spartan-signs.adsuaracloud.com"
-    live = live.rstrip("/")
+    ss = site["spartan_signs"]
+    live = ss["live"].rstrip("/")
 
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
-    shutil.copy(ROOT / "static" / "style.css", OUT / "style.css")
-    for rel in MNEMO_ASSETS:
-        src = MNEMO / rel
-        if src.is_file():
-            shutil.copy(src, OUT / Path(rel).name)
+    for f in (ROOT / "static").iterdir():
+        shutil.copy(f, OUT / f.name)
 
     pages = {}
 
     # Home
-    sme_intro = ""
-    if sme:
-        first = next((p for p in sme["body"].split("\n\n") if p.strip()), "")
-        sme_intro = f"<p>{inline(first.strip())}</p>"
     do = "".join(f"<li><strong>{e(a)}</strong>: {e(b)}</li>" for a, b in site["what_we_do"])
     mis = "".join(f"<li>{e(m)}</li>" for m in site["mission"])
     up_html = "".join(event_html(x, False) for x in up) or (
         '<p class="muted">No events on the calendar right now. Join our Discord to hear about the next one.</p>'
     )
-    stage = sign_fm.get("state") or "Prototyping"
+    stage = ss["stage"]
     home = f"""
 <h2>Building the next generation of manufacturing engineers</h2>
 <p class="lead">{e(site['tagline'])}</p>
@@ -250,7 +161,6 @@ def build():
 <h3>Our mission</h3><ul class="plain">{mis}</ul>
 <h3>About SME</h3>
 <p>{e(site['about_sme'])}</p>
-{sme_intro}
 <h3>Upcoming events</h3>
 {up_html}
 <p><a class="btn ghost" href="/events/">All events</a></p>
@@ -264,28 +174,21 @@ def build():
     pages[""] = ("Home", "SME San Jose State", site["chapter"], home)
 
     # Spartan Signs
-    ss = site["spartan_signs"]
     how = "".join(f'<div class="card"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in ss["how_it_works"])
     teams = "".join(
         f'<div class="card"><h3>{e(a)}</h3><p class="muted">{e(b) if b else "Details coming soon."}</p></div>'
         for a, b in ss["teams"]
     )
-    fig = ""
-    if sign_fm.get("image") and (OUT / Path(sign_fm["image"]).name).is_file():
-        fig = (
-            f'<figure><img src="/{e(Path(sign_fm["image"]).name)}" alt="{e(sign_fm.get("image_alt", ""))}" loading="lazy">'
-            f'<figcaption>{e(sign_fm.get("image_caption", ""))}</figcaption></figure>'
-        )
-    lists = ""
-    if sign_fm.get("done"):
-        lists += "<div class=\"card\"><h3>Done</h3><ul class=\"plain\">" + "".join(f"<li>{e(x)}</li>" for x in sign_fm["done"]) + "</ul></div>"
-    if sign_fm.get("next"):
-        lists += "<div class=\"card\"><h3>Next</h3><ul class=\"plain\">" + "".join(f"<li>{e(x)}</li>" for x in sign_fm["next"]) + "</ul></div>"
-    state_txt = sign_fm.get("state", "In progress")
-    status_txt = re.sub(rf"^{re.escape(state_txt)}[.:]\s*", "", sign_fm.get("status", ""))
-    status = f'<p><span class="tag gold">{e(state_txt)}</span> {e(status_txt)}</p>' if sign_fm else ""
-    details = section(sign["body"], "Details") if sign else ""
-    details_html = f"<h3>Details</h3>{md_basic(details)}" if details else ""
+    fig = (
+        f'<figure><img src="/{e(ss["image"])}" alt="{e(ss["image_alt"])}" loading="lazy">'
+        f'<figcaption>{e(ss["image_caption"])}</figcaption></figure>'
+    )
+    lists = (
+        '<div class="card"><h3>Done</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in ss["done"]) + "</ul></div>"
+        '<div class="card"><h3>Next</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in ss["next"]) + "</ul></div>"
+    )
+    status = f'<p><span class="tag gold">{e(ss["stage"])}</span> {e(ss["status"])}</p>'
+    details_html = '<h3>Details</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in ss["details"]) + "</ul>"
     log = ""
     commits = signs_commits()
     if commits:
@@ -386,7 +289,7 @@ def build():
     nf = shell(site, "404", "Page not found", "Page not found", None,
                '<p class="lead">That page does not exist. <a href="/">Go home</a>.</p>', now)
     (OUT / "404.html").write_text(nf, encoding="utf-8")
-    print(f"built {len(pages) + 1} pages into {OUT} (events: {len(up)} upcoming, {len(past)} past; sjsu note: {'yes' if sjsu else 'no'})")
+    print(f"built {len(pages) + 1} pages into {OUT} (events: {len(up)} upcoming, {len(past)} past)")
 
 
 if __name__ == "__main__":

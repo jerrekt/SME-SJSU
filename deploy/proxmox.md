@@ -31,8 +31,6 @@ What the rules do: nothing may connect in. Going out, the container may use DNS 
 pct enter $CTID
 apt-get update && apt-get install -y git
 git clone https://github.com/jerrekt/SME-SJSU.git /root/sjsu-sme
-# BJ's copy only: add MNEMO_ENABLED=1 in front to enable the private notes feed.
-# Everyone else leaves it out.
 CF_TUNNEL_TOKEN=PASTE_TOKEN_HERE bash /root/sjsu-sme/deploy/setup-lxc.sh
 ```
 

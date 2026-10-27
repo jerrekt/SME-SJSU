@@ -97,7 +97,7 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
 {body}
 </main>
 <footer><div class="in">
-<span>{e(site['name'])} · {e(site['chapter'])}</span>
+<span>{e(site['name'])} · {e(site['chapter'])} · <a href="https://www.sjsu.edu/">sjsu.edu</a></span>
 <span>Updated {built:%b %-d, %Y %-I:%M %p} PT · <code>{e(heads)}</code></span>
 </div></footer>
 </body>
@@ -172,7 +172,7 @@ def build():
 <h3>Follow us</h3>
 <p>Instagram <a href="https://www.instagram.com/{e(site['contact']['instagram'])}/">@{e(site['contact']['instagram'])}</a></p>
 """
-    pages[""] = ("Home", "SME San Jose State", site["chapter"], home)
+    pages[""] = ("Home", "SME San José State University", site["chapter"], home)
 
     # Spartan Signs
     how = "".join(f'<div class="card"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in ss["how_it_works"])
@@ -210,7 +210,7 @@ def build():
 <p class="muted">{e(ss['licensing'])}</p>
 {log}
 """
-    pages["spartan-signs"] = ("Spartan Signs", "Spartan Signs", "An SME project at San José State", sp)
+    pages["spartan-signs"] = ("Spartan Signs", "Spartan Signs", "An SME project at San José State University", sp)
 
     # Events
     past_html = "".join(event_html(x, True) for x in past)
@@ -242,7 +242,7 @@ def build():
         "<li>" + e(t) + (' <a href="' + e(u) + '">Link</a>' if u else "") + "</li>" for t, u in j["steps"]
     )
     jb = f"""
-<h2>Join SME San Jose State</h2>
+<h2>Join SME San José State University</h2>
 <p class="lead">{e(j['intro'])}</p>
 <h3>How to join</h3>
 <ol class="steps">{steps}</ol>

@@ -1,8 +1,8 @@
 {
-  "name": "SME San Jose State",
+  "name": "SME San José State University",
   "chapter": "Society of Manufacturing Engineers · Student Chapter S192",
   "hostname": "sjsu-sme.adsuaracloud.com",
-  "tagline": "SME San Jose State University (Chapter S192) is a student club dedicated to advancing interest in manufacturing. We connect Spartans with industry through facility tours, career speakers, and hands-on projects, open to every major.",
+  "tagline": "SME San José State University (Chapter S192) is a student club dedicated to advancing interest in manufacturing. We connect Spartans with industry through facility tours, career speakers, and hands-on projects, open to every major.",
   "what_we_do": [
     [
       "Industry tours",
@@ -28,7 +28,7 @@
   ],
   "about_sme": "SME is a professional association that supports the manufacturing industry through education, training, and events. Student chapters give members access to SME resources, networking, and scholarships.",
   "club_presentation_url": null,
-  "projects_intro": "SME San Jose State supports members who want to design and build independent projects outside of class. Bring an idea, find teammates, and get guidance from the Project Lead and our faculty advisor.",
+  "projects_intro": "SME San José State University supports members who want to design and build independent projects outside of class. Bring an idea, find teammates, and get guidance from the Project Lead and our faculty advisor.",
   "pitch_video_youtube_id": null,
   "pitch_video_title": "Project Pitch, Fall 2026",
   "spartan_signs": {
@@ -75,7 +75,7 @@
     "stage": "Prototyping",
     "status": "The control-site demo is live but not connected to real hardware yet.",
     "done": [
-      "San Jose State University licensing approval",
+      "San José State University licensing approval",
       "Demo control site hosted"
     ],
     "next": [

@@ -69,8 +69,9 @@ def git_head(path):
 # ---------- page shell ----------
 def shell(site, slug, title, hero_title, hero_sub, body, built):
     path = "/" if slug == "" else f"/{slug}/"
+    cur = ' aria-current="page"'
     nav = "".join(
-        f'<li><a href="{p}"{" aria-current=\"page\"" if p == path else ""}>{e(t)}</a></li>' for t, p in NAV
+        '<li><a href="' + p + '"' + (cur if p == path else "") + ">" + e(t) + "</a></li>" for t, p in NAV
     )
     sub = f"<p>{e(hero_sub)}</p>" if hero_sub else ""
     small = "" if slug == "" else " small"
@@ -238,7 +239,7 @@ def build():
     # Join
     j = site["join"]
     steps = "".join(
-        f"<li>{e(t)}{f' <a href=\"{e(u)}\">Link</a>' if u else ''}</li>" for t, u in j["steps"]
+        "<li>" + e(t) + (' <a href="' + e(u) + '">Link</a>' if u else "") + "</li>" for t, u in j["steps"]
     )
     jb = f"""
 <h2>Join SME San Jose State</h2>
@@ -251,13 +252,14 @@ def build():
     # Sponsors
     sp_ = site["sponsors"]
     plist = "".join(f"<li>{e(p)}</li>" for p in sp_["partners"])
+    plist_html = '<ul class="plain">' + plist + "</ul>" if plist else ""
     contact = site["contact"]
     mail = f'<a href="mailto:{e(contact["email"])}">{e(contact["email"])}</a>' if contact["email"] else \
         f'<a href="mailto:{e(contact["advisor_email"])}">{e(contact["advisor_email"])}</a> (faculty advisor)'
     spb = f"""
 <h2>Sponsors and industry partners</h2>
 <p class="lead">{e(sp_['intro'])}</p>
-{"<ul class=\"plain\">" + plist + "</ul>" if plist else ""}
+{plist_html}
 <h3>Become a sponsor</h3>
 <p>{e(sp_['ask'])}</p>
 <p>Contact: {mail}</p>

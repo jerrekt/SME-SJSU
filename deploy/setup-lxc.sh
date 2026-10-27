@@ -8,10 +8,10 @@ SITE_REPO=${SITE_REPO:-https://github.com/jerrekt/SME-SJSU.git}
 SIGNS_REPO=${SIGNS_REPO:-https://github.com/jerrekt/Spartan-signs.git}
 
 apt-get update -qq
-apt-get install -y -qq git python3 caddy curl openssh-client util-linux ca-certificates
+apt-get install -y -qq git python3 tzdata caddy curl util-linux ca-certificates
 
 id sme >/dev/null 2>&1 || useradd --system --create-home --home-dir /var/lib/sme --shell /usr/sbin/nologin sme
-install -d -o sme -g sme /var/lib/sme/releases /var/www
+install -d -o sme -g sme /var/lib/sme /var/lib/sme/releases /var/www
 install -d -m 755 /etc/sme
 
 [ -f /etc/sme/sme.env ] || cat > /etc/sme/sme.env <<EOF

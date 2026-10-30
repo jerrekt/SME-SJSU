@@ -17,6 +17,7 @@ a:hover{color:var(--navy)}
 header.top{background:var(--navy-3);color:var(--paper);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:5}
 .bar{max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;color:var(--paper);text-decoration:none;font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:.01em}
+.logo{height:40px;width:auto;display:block}
 .mark{width:40px;height:40px;background:var(--gold);color:var(--navy-3);display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:13px;letter-spacing:-.5px;border-radius:10px;transform:rotate(-4deg)}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;flex-wrap:wrap}
 nav a{display:block;padding:7px 14px;color:#C9D3E8;text-decoration:none;font-size:14px;font-weight:600;border-radius:99px;transition:background .15s,color .15s}

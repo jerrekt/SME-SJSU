@@ -85,12 +85,14 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
 <title>{e(title)} · {e(site['name'])}</title>
 <meta name="description" content="{e(site['tagline'][:155])}">
 <meta name="theme-color" content="#0B2A5B">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="bar">
-<a class="brand" href="/"><span class="mark" aria-hidden="true">sme</span><span>{e(site['name'])}</span></a>
+<a class="brand" href="/"><img class="logo" src="/sme-logo-header.png" alt="SME SJSU logo" width="62" height="40"><span>{e(site['name'])}</span></a>
 <nav aria-label="Main"><ul>{nav}</ul></nav>
 </div></header>
 <section class="hero{small}"><div class="in"><h1>{e(hero_title)}</h1>{sub}</div></section>

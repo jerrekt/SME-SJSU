@@ -91,6 +91,19 @@
     "image_alt": "Spartan Signs control page: a list of example signs on the left and controls for one sign on the right: brightness, effects, zone colors and a nightly schedule.",
     "image_caption": "Control demo with example signs. Nothing here talks to real hardware yet."
   },
+  "aint_no_waymo": {
+    "summary": "A miniature self-driving diecast car, plus a website that sends it on room-to-room missions on the second floor of the IS building.",
+    "stage": "Prototyping",
+    "status": "The website is online as a read-only simulation and 2 of 8 milestones are done. The car is not built yet.",
+    "done": [
+      "Website online as a read-only simulation"
+    ],
+    "next": [
+      "Build the car"
+    ],
+    "live": "https://aintnowaymo.adsuaracloud.com",
+    "repo": "https://github.com/jerrekt/Aint-No-WAYmo"
+  },
   "join": {
     "intro": "Membership is open to all SJSU students, no matter your major. Come to a meeting or event to get started.",
     "steps": [

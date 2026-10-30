@@ -27,6 +27,7 @@ TZ = ZoneInfo("America/Los_Angeles")
 NAV = [
     ("Home", "/"),
     ("Spartan Signs", "/spartan-signs/"),
+    ("Ain't No Waymo", "/aint-no-waymo/"),
     ("Events", "/events/"),
     ("Officers", "/officers/"),
     ("Join", "/join/"),
@@ -169,6 +170,9 @@ def build():
 <div class="card gold"><span class="tag gold">{e(stage)}</span><h3>Spartan Signs</h3>
 <p>{e(site['spartan_signs']['summary'])}</p>
 <a class="btn" href="/spartan-signs/">See the project</a></div>
+<div class="card gold"><span class="tag gold">{e(site['aint_no_waymo']['stage'])}</span><h3>Ain't No Waymo</h3>
+<p>{e(site['aint_no_waymo']['summary'])}</p>
+<a class="btn" href="/aint-no-waymo/">See the project</a></div>
 <h3>Follow us</h3>
 <p>Instagram <a href="https://www.instagram.com/{e(site['contact']['instagram'])}/">@{e(site['contact']['instagram'])}</a></p>
 """
@@ -211,6 +215,22 @@ def build():
 {log}
 """
     pages["spartan-signs"] = ("Spartan Signs", "Spartan Signs", "An SME project at San José State University", sp)
+
+    # Ain't No Waymo
+    aw = site["aint_no_waymo"]
+    awlive = aw["live"].rstrip("/")
+    aw_lists = (
+        '<div class="card"><h3>Done</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in aw["done"]) + "</ul></div>"
+        '<div class="card"><h3>Next</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in aw["next"]) + "</ul></div>"
+    )
+    awp = f"""
+<h2>Ain't No Waymo</h2>
+<p class="lead">{e(aw['summary'])}</p>
+<p><span class="tag gold">{e(aw['stage'])}</span> {e(aw['status'])}</p>
+<p><a class="btn" href="{e(awlive)}/">Open the simulation</a><a class="btn ghost" href="{e(aw['repo'])}">Code on GitHub</a></p>
+<div class="grid">{aw_lists}</div>
+"""
+    pages["aint-no-waymo"] = ("Ain't No Waymo", "Ain't No Waymo", "An SME project at San José State University", awp)
 
     # Events
     past_html = "".join(event_html(x, True) for x in past)

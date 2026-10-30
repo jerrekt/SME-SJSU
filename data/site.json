@@ -94,7 +94,7 @@
   "aint_no_waymo": {
     "summary": "A miniature self-driving diecast car, plus a website that sends it on room-to-room missions on the second floor of the IS building.",
     "stage": "Prototyping",
-    "status": "The website is online as a read-only simulation and 2 of 8 milestones are done. The car is not built yet.",
+    "status": "The website is online as a read-only simulation and 2 of 8 milestones are done. 10 of 37 build tasks are done and 4 are in progress. The car is not built yet.",
     "done": [
       "Website online as a read-only simulation"
     ],

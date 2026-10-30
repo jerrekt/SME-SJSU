@@ -63,6 +63,7 @@ ul.plain li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;h
 .card.gold h3{color:#fff;font-size:26px}
 .card.gold .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--navy)}
 .card.gold a{color:var(--gold)}
+.card.gold + .card.gold{margin-top:30px}
 .tag{display:inline-block;background:var(--navy);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:3px 12px;border-radius:99px;margin-right:6px}
 .tag.gold{background:var(--gold);color:var(--navy-3);font-weight:700}
 

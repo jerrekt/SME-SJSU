@@ -108,7 +108,10 @@
       "name": "Dan Berte",
       "url": "https://danberte.com/",
       "after": " challenged us to build something that appears to think, in just three weeks."
-    }
+    },
+    "image": "aint-no-waymo-dashboard.webp",
+    "image_alt": "The Ain't No Waymo dashboard: a room picker and stop queue on the left, and the floor plan of the IS building second floor with a simulated route in the center.",
+    "image_caption": "The simulation dashboard. The route and the car's position are simulated, and the floor plan is an estimate."
   },
   "join": {
     "intro": "Membership is open to all SJSU students, no matter your major. Come to a meeting or event to get started.",

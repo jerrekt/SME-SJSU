@@ -225,6 +225,10 @@ def build():
         '<div class="card"><h3>Done</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in aw["done"]) + "</ul></div>"
         '<div class="card"><h3>Next</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in aw["next"]) + "</ul></div>"
     )
+    aw_fig = (
+        f'<figure><img src="/{e(aw["image"])}" alt="{e(aw["image_alt"])}" loading="lazy">'
+        f'<figcaption>{e(aw["image_caption"])}</figcaption></figure>'
+    )
     awp = f"""
 <h2>Ain't No Waymo</h2>
 <p class="lead">{e(aw['summary'])}</p>
@@ -232,6 +236,7 @@ def build():
 <h3>The challenge</h3>
 <p>{e(aw['challenge']['before'])}<a href="{e(aw['challenge']['url'])}">{e(aw['challenge']['name'])}</a>{e(aw['challenge']['after'])}</p>
 <p><a class="btn" href="{e(awlive)}/">Open the simulation</a><a class="btn ghost" href="{e(aw['repo'])}">Code on GitHub</a></p>
+{aw_fig}
 <div class="grid">{aw_lists}</div>
 """
     pages["aint-no-waymo"] = ("Ain't No Waymo", "Ain't No Waymo", "An SME project at San José State University", awp)

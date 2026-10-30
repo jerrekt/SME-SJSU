@@ -227,6 +227,8 @@ def build():
 <h2>Ain't No Waymo</h2>
 <p class="lead">{e(aw['summary'])}</p>
 <p><span class="tag gold">{e(aw['stage'])}</span> {e(aw['status'])}</p>
+<h3>The challenge</h3>
+<p>{e(aw['challenge']['before'])}<a href="{e(aw['challenge']['url'])}">{e(aw['challenge']['name'])}</a>{e(aw['challenge']['after'])}</p>
 <p><a class="btn" href="{e(awlive)}/">Open the simulation</a><a class="btn ghost" href="{e(aw['repo'])}">Code on GitHub</a></p>
 <div class="grid">{aw_lists}</div>
 """

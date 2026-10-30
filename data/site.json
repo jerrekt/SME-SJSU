@@ -102,7 +102,13 @@
       "Build the car"
     ],
     "live": "https://aintnowaymo.adsuaracloud.com",
-    "repo": "https://github.com/jerrekt/Aint-No-WAYmo"
+    "repo": "https://github.com/jerrekt/Aint-No-WAYmo",
+    "challenge": {
+      "before": "After presenting Opera and emerging technology to our class, guest speaker ",
+      "name": "Dan Berte",
+      "url": "https://danberte.com/",
+      "after": " challenged us to build something that appears to think, in just three weeks."
+    }
   },
   "join": {
     "intro": "Membership is open to all SJSU students, no matter your major. Come to a meeting or event to get started.",

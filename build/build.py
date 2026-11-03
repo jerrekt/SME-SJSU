@@ -275,6 +275,9 @@ def build():
 <p class="lead">{e(j['intro'])}</p>
 <h3>How to join</h3>
 <ol class="steps">{steps}</ol>
+<h3>Join our Discord</h3>
+<figure class="qr"><a href="{e(site['contact']['discord_url'] or '#')}"><img src="/discord-qr.png" alt="QR code to join the SME SJSU Discord" width="220" height="220" loading="lazy"></a>
+<figcaption>Scan with your phone, or <a href="{e(site['contact']['discord_url'] or '#')}">open the invite link</a>.</figcaption></figure>
 """
     pages["join"] = ("Join", "Join", None, jb)
 

@@ -130,7 +130,7 @@
       ],
       [
         "Join our group chat on Discord.",
-        null
+        "https://discord.gg/hHTPDMn7G"
       ]
     ]
   },
@@ -142,7 +142,7 @@
   "contact": {
     "email": null,
     "instagram": "sjsu_sme",
-    "discord_url": null,
+    "discord_url": "https://discord.gg/hHTPDMn7G",
     "meetings": null,
     "advisor": "David Yan",
     "advisor_email": "david.yan@sjsu.edu"

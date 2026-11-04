@@ -108,7 +108,7 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
 {body}
 </main>
 <footer><div class="in">
-<span>{e(site['name'])} · {e(site['chapter'])} · <a href="https://www.sjsu.edu/">sjsu.edu</a></span>
+<span>{e(site['full_name'])} · {e(site['chapter_short'])} · <a href="https://www.sjsu.edu/">{e(site['school'])}</a></span>
 <span>Updated {built:%b %-d, %Y %-I:%M %p} PT · <code>{e(heads)}</code></span>
 </div></footer>
 </body>
@@ -176,7 +176,7 @@ def build():
 <h3>Upcoming events</h3>
 {up_html}
 <p><a class="btn ghost" href="/events/">All events</a></p>
-<h3>Our project</h3>
+<h3>Our projects</h3>
 <div class="card gold"><span class="tag gold">{e(stage)}</span><h3>Spartan Signs</h3>
 <p>{e(site['spartan_signs']['summary'])}</p>
 <a class="btn" href="/spartan-signs/">See the project</a></div>
@@ -205,12 +205,10 @@ def build():
     status = f'<p><span class="tag gold">{e(ss["stage"])}</span> {e(ss["status"])}</p>'
     details_html = '<h3>Details</h3><ul class="plain">' + "".join(f"<li>{e(x)}</li>" for x in ss["details"]) + "</ul>"
     log = ""
-    commits = signs_commits()
+    commits = signs_commits(1)
     if commits:
-        log = '<h3>Latest updates</h3><ul class="log">' + "".join(
-            f'<li><time datetime="{w.isoformat()}">{w:%b %-d, %-I:%M %p}</time><span>{e(s)} <code>{e(h)}</code></span></li>'
-            for h, w, s in commits
-        ) + "</ul><p class=\"muted\">Pulled live from the Spartan Signs code repository.</p>"
+        h, w, _ = commits[0]
+        log = f'<p class="muted">Code last updated <time datetime="{w.isoformat()}">{w:%B %-d, %Y}</time>.</p>'
     sp = f"""
 <p class="lead">{e(ss['summary'])}</p>
 {status}
@@ -267,7 +265,7 @@ def build():
 <h2>{e(officers['season'])} officers</h2>
 <div class="people">{ppl}</div>
 <h3>Faculty advisor</h3>
-<div class="card person"><b>{e(adv['name'])}</b><span class="muted">{e(adv['dept'])}</span><a href="mailto:{e(adv['email'])}">{e(adv['email'])}</a></div>
+<div class="card person"><b>{e(adv['name'])}</b><span class="muted">{e(adv['dept'])}</span><br><a href="mailto:{e(adv['email'])}">{e(adv['email'])}</a></div>
 """
     pages["officers"] = ("Officers", "Officers", None, of)
 

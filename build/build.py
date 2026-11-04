@@ -76,7 +76,8 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
         '<li><a href="' + p + '"' + (cur if p == path else "") + ">" + e(t) + "</a></li>" for t, p in NAV
     )
     if slug == "":
-        h1 = f'{e(site["full_name"])} <span class="school">{e(site["school"])}</span>'
+        h1 = ('<span class="l1">Society of</span> <span class="l2">Manufacturing Engineers</span> '
+              f'<span class="school">{e(site["school"])}</span>')
         hero_sub = site["chapter_short"]
     else:
         h1 = e(hero_title)

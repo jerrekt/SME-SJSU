@@ -209,7 +209,6 @@ def build():
             for h, w, s in commits
         ) + "</ul><p class=\"muted\">Pulled live from the Spartan Signs code repository.</p>"
     sp = f"""
-<h2>Spartan Signs</h2>
 <p class="lead">{e(ss['summary'])}</p>
 {status}
 <p><a class="btn" href="{e(live)}/">Open the control demo</a><a class="btn ghost" href="{e(live)}/lab/">Build options lab</a><a class="btn ghost" href="{e(live)}/about/">Project page</a><a class="btn ghost" href="{e(ss['repo'])}">Code on GitHub</a></p>
@@ -235,7 +234,6 @@ def build():
         f'<figcaption>{e(aw["image_caption"])}</figcaption></figure>'
     )
     awp = f"""
-<h2>Ain't No Waymo</h2>
 <p class="lead">{e(aw['summary'])}</p>
 <p><span class="tag gold">{e(aw['stage'])}</span> {e(aw['status'])}</p>
 <h3>The challenge</h3>
@@ -276,7 +274,6 @@ def build():
         "<li>" + e(t) + (' <a href="' + e(u) + '">Link</a>' if u else "") + "</li>" for t, u in j["steps"]
     )
     jb = f"""
-<h2>Join SME San José State University</h2>
 <p class="lead">{e(j['intro'])}</p>
 <h3>How to join</h3>
 <ol class="steps">{steps}</ol>

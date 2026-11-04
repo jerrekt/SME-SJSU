@@ -9,6 +9,7 @@ Output
   $OUT_DIR                    plain HTML/CSS, served by Caddy
 """
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -75,13 +76,14 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
         '<li><a href="' + p + '"' + (cur if p == path else "") + ">" + e(t) + "</a></li>" for t, p in NAV
     )
     if slug == "":
-        h1 = f'{e(site["full_name"])}<span class="school">{e(site["school"])}</span>'
+        h1 = f'{e(site["full_name"])} <span class="school">{e(site["school"])}</span>'
         hero_sub = site["chapter_short"]
     else:
         h1 = e(hero_title)
     sub = f"<p>{e(hero_sub)}</p>" if hero_sub else ""
     small = "" if slug == "" else " small"
     heads = f"{git_head(ROOT)}/{git_head(SIGNS)}"
+    css_v = hashlib.sha1((ROOT / "static" / "style.css").read_bytes()).hexdigest()[:10]
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -92,12 +94,12 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
 <meta name="theme-color" content="#0B2A5B">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v={css_v}">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="bar">
-<a class="brand" href="/"><img class="logo" src="/sme-logo-header.png" alt="SME SJSU logo" width="62" height="40"><span class="brandname"><b>{e(site['full_name'])}</b><small>{e(site['school'])}</small></span></a>
+<a class="brand" href="/"><img class="logo" src="/sme-logo-header.png" alt="SME SJSU logo" width="62" height="40"><span class="brandname"><b>{e(site['full_name'])} </b><small>{e(site['school'])}</small></span></a>
 <nav aria-label="Main"><ul>{nav}</ul></nav>
 </div></header>
 <section class="hero{small}"><div class="in"><h1>{h1}</h1>{sub}</div></section>

@@ -122,3 +122,13 @@ footer a{color:var(--gold)}
   .hero::after{width:150px;height:150px;border-width:18px;right:-70px;top:-70px;opacity:.55}
 }
 figure.qr img{width:220px;height:220px;padding:10px;background:#fff;border-radius:14px;border:2px solid var(--navy);box-shadow:6px 6px 0 var(--gold)}
+.brandname{display:flex;flex-direction:column;line-height:1.1}
+.brandname b{font-size:19px}
+.brandname small{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.04em;padding-left:2.2em;margin-top:2px}
+.hero h1 .school{display:block;font-size:.42em;font-weight:600;color:var(--gold);letter-spacing:.01em;margin-top:.5em;padding-left:3.5em;line-height:1.2}
+.hero:not(.small) h1{max-width:none}
+@media (max-width:640px){.hero h1 .school{padding-left:1.5em}.brandname b{font-size:15px}.brandname small{font-size:11px}}
+.hero:not(.small)::after{right:-190px;top:-110px;opacity:.7}
+.hero h1 .school{padding-left:5em}
+@media (max-width:640px){.hero:not(.small)::after{right:-70px;top:-70px}.hero h1 .school{padding-left:1.5em}}
+@media (min-width:641px){.hero:not(.small)::after{right:-270px}}

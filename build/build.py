@@ -74,6 +74,11 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
     nav = "".join(
         '<li><a href="' + p + '"' + (cur if p == path else "") + ">" + e(t) + "</a></li>" for t, p in NAV
     )
+    if slug == "":
+        h1 = f'{e(site["full_name"])}<span class="school">{e(site["school"])}</span>'
+        hero_sub = site["chapter_short"]
+    else:
+        h1 = e(hero_title)
     sub = f"<p>{e(hero_sub)}</p>" if hero_sub else ""
     small = "" if slug == "" else " small"
     heads = f"{git_head(ROOT)}/{git_head(SIGNS)}"
@@ -92,10 +97,10 @@ def shell(site, slug, title, hero_title, hero_sub, body, built):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="bar">
-<a class="brand" href="/"><img class="logo" src="/sme-logo-header.png" alt="SME SJSU logo" width="62" height="40"><span>{e(site['name'])}</span></a>
+<a class="brand" href="/"><img class="logo" src="/sme-logo-header.png" alt="SME SJSU logo" width="62" height="40"><span class="brandname"><b>{e(site['full_name'])}</b><small>{e(site['school'])}</small></span></a>
 <nav aria-label="Main"><ul>{nav}</ul></nav>
 </div></header>
-<section class="hero{small}"><div class="in"><h1>{e(hero_title)}</h1>{sub}</div></section>
+<section class="hero{small}"><div class="in"><h1>{h1}</h1>{sub}</div></section>
 <main id="main">
 {body}
 </main>

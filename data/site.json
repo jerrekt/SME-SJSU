@@ -117,19 +117,11 @@
     "intro": "Membership is open to all SJSU students, no matter your major. Come to a meeting or event to get started.",
     "steps": [
       [
-        "Fill out the interest form.",
+        "Join through the Sammy app.",
         null
       ],
       [
-        "Register with the club on SJSU's student organization site.",
-        null
-      ],
-      [
-        "Sign up for an SME student membership.",
-        null
-      ],
-      [
-        "Join our group chat on Discord.",
+        "Join the Discord.",
         "https://discord.gg/52mmwQSZyc"
       ]
     ]

@@ -1,6 +1,20 @@
 {
   "events": [
-    {"title": "Rigetti Computing: Quantum Computing Tour", "start": "2026-10-06T10:30", "where": "Address sent after RSVP", "signup_url": null},
-    {"title": "Tesla Tour", "start": "2026-10-14T08:00", "where": "Address sent after RSVP", "signup_url": null}
+    {
+      "title": "Rigetti Computing: Quantum Computing Tour",
+      "start": "2026-10-06T10:30",
+      "where": "Rigetti Computing, Fremont",
+      "signup_url": null,
+      "recap": "A look inside a quantum computer maker, from fabrication to the dilution fridges."
+    },
+    {
+      "title": "Tesla Tour",
+      "start": "2026-10-14T08:00",
+      "where": "Tesla Fremont Factory",
+      "signup_url": null,
+      "image": "tesla-tour.webp",
+      "image_alt": "SME members with the chapter flag outside the Tesla factory in Fremont.",
+      "recap": "Members toured the Fremont factory and saw the production line up close."
+    }
   ]
 }

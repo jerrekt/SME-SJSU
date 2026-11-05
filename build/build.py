@@ -134,10 +134,16 @@ def event_html(ev, past):
         signup = f'<a href="{e(ev["signup_url"])}">RSVP here</a>'
     else:
         signup = "RSVP link coming soon. Watch Discord."
+    img = ""
+    if ev.get("image"):
+        img = f'<img class="evimg" src="/{e(ev["image"])}" alt="{e(ev.get("image_alt") or ev["title"])}" loading="lazy">'
+    recap = f'<p class="recap">{e(ev["recap"])}</p>' if past and ev.get("recap") else ""
+    rows = f"<dt>When</dt><dd>{e(when)}</dd><dt>Where</dt><dd>{e(ev.get('where') or 'TBD')}</dd>"
+    if not past:
+        rows += f"<dt>Sign up</dt><dd>{signup}</dd>"
     return (
-        f'<article class="event{" past" if past else ""}"><h3>{e(ev["title"])}</h3><dl>'
-        f"<dt>When</dt><dd>{e(when)}</dd><dt>Where</dt><dd>{e(ev.get('where') or 'TBD')}</dd>"
-        f"<dt>Sign up</dt><dd>{signup}</dd></dl></article>"
+        f'<article class="event{" past" if past else ""}{" has-img" if img else ""}">{img}<div>'
+        f'<h3>{e(ev["title"])}</h3><dl>{rows}</dl>{recap}</div></article>'
     )
 
 
@@ -166,9 +172,15 @@ def build():
         '<p class="muted">No events on the calendar right now. Join our Discord to hear about the next one.</p>'
     )
     stage = ss["stage"]
+    photo = ""
+    if site.get("home_photo"):
+        hp = site["home_photo"]
+        photo = (f'<figure class="homephoto"><img src="/{e(hp["file"])}" alt="{e(hp["alt"])}" width="1206" height="911">'
+                 f'<figcaption>{e(hp["caption"])}</figcaption></figure>')
     home = f"""
 <h2>Building the next generation of manufacturing engineers</h2>
 <p class="lead">{e(site['tagline'])}</p>
+{photo}
 <h3>What we do</h3><ul class="plain">{do}</ul>
 <h3>Our mission</h3><ul class="plain">{mis}</ul>
 <h3>About SME</h3>

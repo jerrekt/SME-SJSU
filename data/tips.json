@@ -53,8 +53,15 @@
           "points": [
             "Our Tech 145 professor recommends it, and it's a fair path if you want to go deep on the tools.",
             "Start with the White Belt for Tech 145 extra credit, then the MSI Black Belt online. It includes a project simulation, no real project needed.",
+            "Cost: it's usually under $100 through a Groupon deal (Champion + Lean Black Belt bundle). Deals change, so check the price.",
             "The catch: it shows you passed the exam, not that you led a project. Some engineers will see a student Black Belt as a stretch.",
             "So list it under your projects and experience and name MSI as the issuer. Be ready to explain what you learned from the simulation, plus any real improvement work you've done."
+          ],
+          "links": [
+            {
+              "label": "MSI Champion + Lean Black Belt bundle on Groupon",
+              "url": "https://www.groupon.com/deals/n-management-and-strategy-institute-champion-and-lean-black-belt-bundle-phoenix"
+            }
           ]
         },
         {

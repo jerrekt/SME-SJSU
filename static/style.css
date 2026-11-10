@@ -154,3 +154,6 @@ figure.qr img{width:220px;height:220px;padding:10px;background:#fff;border-radiu
 .tip.gold h4{color:#fff}
 .tip .highlight{margin:6px 0 0;font-size:17px;line-height:1.55}
 .tip.gold .highlight strong{color:var(--paper)}
+.tiplink{margin:8px 0 0;font-size:15px;font-weight:600}
+.tip.gold ul.plain li{color:var(--paper)}
+.tip.gold .tiplink a{color:var(--gold)}

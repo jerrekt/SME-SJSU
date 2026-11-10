@@ -98,17 +98,10 @@
           ]
         },
         {
-          "title": "TI-84 tricks for stats",
-          "points": [
-            "Infinity in normalcdf: 1E99 with the EE key (2nd + comma), not ^.",
-            "Sample data? Use Sx, not σx.",
-            "Turn on DiagnosticOn to see r in LinReg."
-          ]
-        },
-        {
           "title": "Go on the tours",
           "points": [
-            "Tesla and Rigetti this year. Best way to see a real line and meet engineers.",
+            "We toured Tesla and Rigetti this year. Best way to see a real line and meet engineers.",
+            "Talk to the engineers there. They can tell you about internships and what they look for when hiring.",
             "Join a club project. Easy resume bullets before senior project."
           ]
         }

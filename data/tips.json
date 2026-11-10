@@ -23,14 +23,14 @@
           "points": [
             "Go for a Green Belt, not a Black Belt.",
             "Tech 145 and Tech 31 already cover most of it (DMAIC, SIPOC, control charts, Gage R&R).",
-            "Want one before you graduate? IASSC has no prerequisites. One proctored exam, $350.",
+            "Want one before you graduate? IASSC has no prerequisites. One proctored exam, starts at $350 (check the current price and exam format).",
             "Get the higher belts later through your job."
           ]
         },
         {
           "title": "Why not Black Belt?",
           "points": [
-            "Black Belt means you've led real projects. Most students haven't.",
+            "Employers often expect a Black Belt to have led real improvement projects. Some certifications don't require that. Most students haven't led one.",
             "Our professors say a new grad with one can look like a stretch. Plenty of engineers online agree.",
             "It's not fake. It just doesn't mean much without projects behind it."
           ]
@@ -39,9 +39,18 @@
           "title": "Who gave you the belt matters",
           "points": [
             "ASQ: the one quality people respect most, but you need 3 years of work experience first.",
-            "IASSC: open to students. Proctored, closed book, 70% to pass.",
+            "IASSC: open to students. Proctored, closed book, 70% to pass. Starts at $350.",
             "MSI and other online ones: online exam plus a project simulation, no real project. Cheap, legit, but light.",
             "Company programs with a real project count the most at that company."
+          ]
+        },
+        {
+          "title": "Going for the MSI Black Belt?",
+          "points": [
+            "Our Tech 145 professor recommends it, and it's a fair path if you want to go deep on the tools.",
+            "Start with the White Belt for Tech 145 extra credit, then the MSI Black Belt online. It includes a project simulation, no real project needed.",
+            "The catch: it shows you passed the exam, not that you led a project. Some engineers will see a student Black Belt as a stretch.",
+            "So list it under your projects and experience, name MSI as the issuer, and have one real project ready to talk about."
           ]
         },
         {
@@ -101,12 +110,6 @@
           "points": [
             "Tesla and Rigetti this year. Best way to see a real line and meet engineers.",
             "Join a club project. Easy resume bullets before senior project."
-          ]
-        },
-        {
-          "title": "Watch your units",
-          "points": [
-            "Over 180 units, financial aid can put a hold on you. File a SAP appeal early with a grad plan."
           ]
         }
       ],

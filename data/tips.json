@@ -8,7 +8,7 @@
           "title": "Start with a Green Belt, not a Black Belt",
           "points": [
             "Belts go White, Yellow, Green, Black, then Master Black Belt. A Green Belt matches what a new grad actually does: help on improvement projects and run the basic tools (DMAIC, SIPOC, control charts, Gage R&R).",
-            "A senior-project professor here who spent his career at Toyota says students should go for a Green Belt. A Black Belt means you have led real improvement projects, and a new grad usually has not, so experienced engineers and hiring managers may question it.",
+            "Prof. Vlad Ionescu, who teaches senior project and worked at Toyota, says students should go for a Green Belt. A Black Belt means you have led real improvement projects, and a new grad usually has not, so experienced engineers and hiring managers may question it.",
             "A Black Belt is not fake. It is real and recognized. It is just weak without project experience behind it."
           ]
         },
@@ -25,18 +25,33 @@
         {
           "title": "How to show it on a resume",
           "points": [
-            "Do not lead with it. Put it in a Certifications section near the bottom, not at the top or in your headline. A Lean Six Sigma professor here gives the same advice, even for students who earned a Black Belt.",
+            "Do not lead with it. Put it in a Certifications section near the bottom, not at the top or in your headline. Prof. Karim Suleman, who teaches Lean Manufacturing and Six Sigma (Tech 145), gives the same advice, even for students who earned a Black Belt.",
             "Write the issuer and the year: \"Lean Six Sigma Green Belt, IASSC, 2026\".",
             "What gets you hired is a project with a number: \"cut setup time 30% on the Spartan Signs line\". Use class projects, club projects and internships to show you can use the tools."
           ]
         }
       ],
       "sources": [
-        {"label": "ASQ Six Sigma Green Belt requirements", "url": "https://www.asq.org/cert/six-sigma-green-belt/apply"},
-        {"label": "IASSC Green Belt", "url": "https://www.iassc.org/six-sigma-certification/green-belt-certification/"},
-        {"label": "MSI certification requirements", "url": "https://www.msicertified.com/blog/six-sigma-certification-requirements/"},
-        {"label": "r/AskEngineers: fresh grad with a Six Sigma Black Belt", "url": "https://www.reddit.com/r/AskEngineers/comments/91xanw/fresh_grad_with_a_six_sigma_black_belt/"},
-        {"label": "r/SixSigma: what I wish I knew before choosing a Six Sigma certification", "url": "https://www.reddit.com/r/SixSigma/comments/1l87577/what_i_wish_i_knew_before_choosing_a_six_sigma/"}
+        {
+          "label": "ASQ Six Sigma Green Belt requirements",
+          "url": "https://www.asq.org/cert/six-sigma-green-belt/apply"
+        },
+        {
+          "label": "IASSC Green Belt",
+          "url": "https://www.iassc.org/six-sigma-certification/green-belt-certification/"
+        },
+        {
+          "label": "MSI certification requirements",
+          "url": "https://www.msicertified.com/blog/six-sigma-certification-requirements/"
+        },
+        {
+          "label": "r/AskEngineers: fresh grad with a Six Sigma Black Belt",
+          "url": "https://www.reddit.com/r/AskEngineers/comments/91xanw/fresh_grad_with_a_six_sigma_black_belt/"
+        },
+        {
+          "label": "r/SixSigma: what I wish I knew before choosing a Six Sigma certification",
+          "url": "https://www.reddit.com/r/SixSigma/comments/1l87577/what_i_wish_i_knew_before_choosing_a_six_sigma/"
+        }
       ]
     },
     {

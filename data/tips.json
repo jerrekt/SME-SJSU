@@ -1,48 +1,47 @@
 {
-  "intro": "Advice from SME members and the faculty we talk to, for students in manufacturing, quality and engineering technology. Have a tip? Post it in the Discord and an officer will add it here.",
+  "intro": "Stuff we wish we knew earlier. Got a tip? Drop it in the Discord.",
   "sections": [
     {
       "title": "Certifications: Lean Six Sigma belts",
       "tips": [
         {
-          "title": "Get Green Belt prep for credit",
-          "highlight": "There is a 1-unit elective that counts toward your degree where you can study for, or earn, a Green Belt for credit. Ask our major advisor, Richard Grotegut, which course it is and how to enroll.",
+          "title": "Get it for class credit",
+          "highlight": "There's a 1-unit elective where you can study for or earn a Green Belt for credit. Ask our major advisor, Richard Grotegut.",
           "points": []
         },
         {
-          "title": "What to get as a manufacturing student",
+          "title": "What to get",
           "points": [
-            "1. Learn the tools first. Tech 145 and Tech 31 cover most Green Belt material: DMAIC, SIPOC, control charts, Gage R&R, root cause analysis.",
-            "2. If you want a credential before you graduate, aim for a Green Belt from an issuer with a proctored exam. IASSC's Green Belt has no prerequisites, so students can take it.",
-            "3. Pair it with one project you can measure, from a class, club or internship. A result like \"cut changeover time 30%\" is the evidence employers ask about.",
-            "4. After you start working, look at your employer's belt program or ASQ, once you meet their experience requirements."
+            "Go for a Green Belt, not a Black Belt.",
+            "Tech 145 and Tech 31 already cover most of it (DMAIC, SIPOC, control charts, Gage R&R).",
+            "Want one before you graduate? IASSC has no prerequisites. One proctored exam, $350.",
+            "Get the higher belts later through your job."
           ]
         },
         {
-          "title": "Why start with Green, not Black",
+          "title": "Why not Black Belt?",
           "points": [
-            "Belts usually go White, Yellow, Green, Black, then Master Black Belt. A Green Belt fits what new grads do: support improvement projects and use the tools.",
-            "A Black Belt suggests you have led improvement projects. Our Tech 145 and Tech 190 faculty, and many engineers in online discussions, say a new grad with a Black Belt but no led projects can look overstated.",
-            "That is a common view, not a universal hiring rule. A Black Belt is still a real credential; it just carries less weight without projects behind it."
+            "Black Belt means you've led real projects. Most students haven't.",
+            "Our professors say a new grad with one can look like a stretch. Plenty of engineers online agree.",
+            "It's not fake. It just doesn't mean much without projects behind it."
           ]
         },
         {
-          "title": "The issuer matters as much as the color",
+          "title": "Who gave you the belt matters",
           "points": [
-            "There is no single governing body for Six Sigma, so requirements differ a lot between issuers. Check what an exam and any project actually require.",
-            "ASQ Green Belt (CSSGB): requires 3 years of full-time, paid work experience in the subject, so most current students do not qualify yet. Exam about $383 (members) to $483.",
-            "IASSC Green Belt: no prerequisites; 100 questions, 3 hours, closed book, proctored online or at a test center; 70% to pass; $350 voucher.",
-            "MSI (Management and Strategy Institute) Green and Black Belt: online exam plus a required project simulation; no workplace project needed. A legitimate, lower-cost credential, but it shows you passed an exam, not that you ran a project.",
-            "Employer programs that require a project on their own line usually carry the most weight inside that company."
+            "ASQ: the one quality people respect most, but you need 3 years of work experience first.",
+            "IASSC: open to students. Proctored, closed book, 70% to pass.",
+            "MSI and other online ones: online exam plus a project simulation, no real project. Cheap, legit, but light.",
+            "Company programs with a real project count the most at that company."
           ]
         },
         {
-          "title": "Already have a belt? Show it honestly",
+          "title": "Already have one?",
           "points": [
-            "Keep it, and list it in a Certifications section with the issuer and year, for example \"Lean Six Sigma Black Belt, Management and Strategy Institute, 2026\".",
-            "Place it below stronger evidence: projects, internships and work experience. Our Tech 145 faculty source gives this advice even for students who hold a Black Belt.",
-            "Do not imply you led workplace projects unless you did. If your belt included a simulation, call it that.",
-            "Be ready to walk through one real project where you used the tools."
+            "Keep it, but put it near the bottom of your resume, under your projects and experience.",
+            "List who issued it and the year.",
+            "Don't say you led a project if it was a simulation.",
+            "Have one real project ready to talk about. That's what they'll ask."
           ]
         }
       ],
@@ -68,37 +67,37 @@
           "url": "https://www.reddit.com/r/SixSigma/comments/1l87577/what_i_wish_i_knew_before_choosing_a_six_sigma/"
         }
       ],
-      "intro": "Based on advice from SJSU faculty who teach Tech 145 (Lean Manufacturing and Six Sigma) and Tech 190 (Senior Project). The Tech 190 professor has years of industry experience at Toyota. Combined with engineers' discussions online and each certifying body's published requirements."
+      "intro": "From our Tech 145 and Tech 190 professors (the Tech 190 prof worked at Toyota), plus what engineers say online."
     },
     {
       "title": "Classes and the major",
       "tips": [
         {
-          "title": "Tech 31 and Tech 145 overlap: study them together",
+          "title": "Tech 31 + Tech 145 overlap",
           "points": [
-            "QA/QC (Tech 31) and Lean Manufacturing and Six Sigma (Tech 145) share a lot: DMAIC, SIPOC, voice of the customer, CTQs, defects vs nonconformities, Gage R&R. Learning a tool once for both classes saves time.",
-            "Know the difference in focus: Lean goes after waste (overproduction is the big one), Six Sigma goes after variation and defects."
+            "Same tools in both: DMAIC, SIPOC, CTQs, Gage R&R. Study them together.",
+            "Lean cuts waste. Six Sigma cuts defects and variation."
           ]
         },
         {
-          "title": "TI-84 stats tricks",
+          "title": "TI-84 tricks for stats",
           "points": [
-            "For infinity in normalcdf, type 1E99 with the EE key (2nd then comma). Do not use the ^ key; it gives a wrong answer.",
-            "Use Sx, not σx, when you have a sample.",
-            "Turn on DiagnosticOn (catalog) so LinReg shows r and r²."
+            "Infinity in normalcdf: 1E99 with the EE key (2nd + comma), not ^.",
+            "Sample data? Use Sx, not σx.",
+            "Turn on DiagnosticOn to see r in LinReg."
           ]
         },
         {
-          "title": "Go on the tours and do a project",
+          "title": "Go on the tours",
           "points": [
-            "Company tours (Tesla, Rigetti this year) are the easiest way to see a real line and meet engineers. Bring questions and ask for a contact.",
-            "Join a club project like Spartan Signs or Ain't No Waymo. It gives you resume bullets with real numbers before your senior project starts."
+            "Tesla and Rigetti this year. Best way to see a real line and meet engineers.",
+            "Join a club project. Easy resume bullets before senior project."
           ]
         },
         {
-          "title": "Watch your units if you change majors",
+          "title": "Watch your units",
           "points": [
-            "Past 180 units, financial aid can place an Excessive Unit hold. If that happens, file a SAP appeal with a graduation plan early, before the semester starts. Check with Financial Aid for the current rules."
+            "Over 180 units, financial aid can put a hold on you. File a SAP appeal early with a grad plan."
           ]
         }
       ],

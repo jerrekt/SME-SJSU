@@ -1,0 +1,77 @@
+{
+  "intro": "Advice from SME members and the faculty we talk to, for students in manufacturing, quality and engineering technology. Have a tip? Post it in the Discord and an officer will add it here.",
+  "sections": [
+    {
+      "title": "Certifications: Lean Six Sigma belts",
+      "tips": [
+        {
+          "title": "Start with a Green Belt, not a Black Belt",
+          "points": [
+            "Belts go White, Yellow, Green, Black, then Master Black Belt. A Green Belt matches what a new grad actually does: help on improvement projects and run the basic tools (DMAIC, SIPOC, control charts, Gage R&R).",
+            "A senior-project professor here who spent his career at Toyota says students should go for a Green Belt. A Black Belt means you have led real improvement projects, and a new grad usually has not, so experienced engineers and hiring managers may question it.",
+            "A Black Belt is not fake. It is real and recognized. It is just weak without project experience behind it."
+          ]
+        },
+        {
+          "title": "Who issues the belt matters more than the color",
+          "points": [
+            "There is no single official Six Sigma body, so belts from different issuers are not equal. Quality engineers will look at who issued it.",
+            "ASQ (CSSGB) is the best-known Green Belt, but it requires 3 years of full-time work experience in the subject, so most students cannot take it yet. Plan on it after you start working.",
+            "IASSC Green Belt has no prerequisites: one proctored, closed-book exam (100 questions, 3 hours, 70% to pass, about $350). It is the strongest option you can take as a student.",
+            "Online-only providers such as MSI (Management and Strategy Institute) certify by online exam plus a project simulation, with no real project required for Black Belt. They are often discounted on deal sites. Faculty advice here: it is worth about what you paid for it.",
+            "A belt your employer trains you for, with a real project on their line, beats all of the above. Many manufacturers run their own programs."
+          ]
+        },
+        {
+          "title": "How to show it on a resume",
+          "points": [
+            "Do not lead with it. Put it in a Certifications section near the bottom, not at the top or in your headline. A Lean Six Sigma professor here gives the same advice, even for students who earned a Black Belt.",
+            "Write the issuer and the year: \"Lean Six Sigma Green Belt, IASSC, 2026\".",
+            "What gets you hired is a project with a number: \"cut setup time 30% on the Spartan Signs line\". Use class projects, club projects and internships to show you can use the tools."
+          ]
+        }
+      ],
+      "sources": [
+        {"label": "ASQ Six Sigma Green Belt requirements", "url": "https://www.asq.org/cert/six-sigma-green-belt/apply"},
+        {"label": "IASSC Green Belt", "url": "https://www.iassc.org/six-sigma-certification/green-belt-certification/"},
+        {"label": "MSI certification requirements", "url": "https://www.msicertified.com/blog/six-sigma-certification-requirements/"},
+        {"label": "r/AskEngineers: fresh grad with a Six Sigma Black Belt", "url": "https://www.reddit.com/r/AskEngineers/comments/91xanw/fresh_grad_with_a_six_sigma_black_belt/"},
+        {"label": "r/SixSigma: what I wish I knew before choosing a Six Sigma certification", "url": "https://www.reddit.com/r/SixSigma/comments/1l87577/what_i_wish_i_knew_before_choosing_a_six_sigma/"}
+      ]
+    },
+    {
+      "title": "Classes and the major",
+      "tips": [
+        {
+          "title": "Tech 31 and Tech 145 overlap: study them together",
+          "points": [
+            "QA/QC (Tech 31) and Lean Manufacturing and Six Sigma (Tech 145) share a lot: DMAIC, SIPOC, voice of the customer, CTQs, defects vs nonconformities, Gage R&R. Learning a tool once for both classes saves time.",
+            "Know the difference in focus: Lean goes after waste (overproduction is the big one), Six Sigma goes after variation and defects."
+          ]
+        },
+        {
+          "title": "TI-84 stats tricks",
+          "points": [
+            "For infinity in normalcdf, type 1E99 with the EE key (2nd then comma). Do not use the ^ key; it gives a wrong answer.",
+            "Use Sx, not σx, when you have a sample.",
+            "Turn on DiagnosticOn (catalog) so LinReg shows r and r²."
+          ]
+        },
+        {
+          "title": "Go on the tours and do a project",
+          "points": [
+            "Company tours (Tesla, Rigetti this year) are the easiest way to see a real line and meet engineers. Bring questions and ask for a contact.",
+            "Join a club project like Spartan Signs or Ain't No Waymo. It gives you resume bullets with real numbers before your senior project starts."
+          ]
+        },
+        {
+          "title": "Watch your units if you change majors",
+          "points": [
+            "Past 180 units, financial aid can place an Excessive Unit hold. If that happens, file a SAP appeal with a graduation plan early, before the semester starts. Check with Financial Aid for the current rules."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  ]
+}

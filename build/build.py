@@ -32,6 +32,7 @@ NAV = [
     ("Events", "/events/"),
     ("Officers", "/officers/"),
     ("Join", "/join/"),
+    ("Tips", "/tips/"),
     ("Sponsors", "/sponsors/"),
     ("Contact", "/contact/"),
 ]
@@ -328,6 +329,20 @@ def build():
 <ul class="plain">{"".join(rows)}</ul>
 """
     pages["contact"] = ("Contact", "Contact", None, ct)
+
+    # Tips
+    tj = json.loads((ROOT / "data" / "tips.json").read_text(encoding="utf-8"))
+    tb = f'<p class="lead">{e(tj["intro"])}</p>'
+    for sec in tj["sections"]:
+        tb += f'<h3>{e(sec["title"])}</h3><div class="tips">'
+        for t in sec["tips"]:
+            pts = "".join(f"<li>{e(x)}</li>" for x in t["points"])
+            tb += f'<article class="card tip"><h4>{e(t["title"])}</h4><ul class="plain">{pts}</ul></article>'
+        tb += "</div>"
+        if sec.get("sources"):
+            src = " · ".join(f'<a href="{e(x["url"])}">{e(x["label"])}</a>' for x in sec["sources"])
+            tb += f'<p class="sources muted">Sources: {src}</p>'
+    pages["tips"] = ("Tips", "Tips", "Advice for classes, certifications and careers", tb)
 
     for slug, (title, h1, sub, body) in pages.items():
         doc = shell(site, slug, title, h1, sub, body, now)

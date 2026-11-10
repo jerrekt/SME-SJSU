@@ -26,6 +26,7 @@ Edit these files in the GitHub web editor (pencil icon), commit to `main`:
 |---|---|
 | Officers and faculty advisor (do this every year) | `data/officers.json` |
 | Events (past ones move to "Past events" by themselves) | `data/events.json` |
+| Tips page (certifications, classes, the major): each section has tips with a title and bullet points | `data/tips.json` |
 | Home text, mission, join steps, contact info, sponsors | `data/site.json` |
 | Colors and look | `static/style.css` (the color variables are at the top) |
 

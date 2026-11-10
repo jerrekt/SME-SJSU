@@ -340,7 +340,10 @@ def build():
         tb += '<div class="tips">'
         for t in sec["tips"]:
             pts = "".join(f"<li>{e(x)}</li>" for x in t["points"])
-            tb += f'<article class="card tip"><h4>{e(t["title"])}</h4><ul class="plain">{pts}</ul></article>'
+            hl = f'<p class="highlight"><strong>{e(t["highlight"])}</strong></p>' if t.get("highlight") else ""
+            ul = f'<ul class="plain">{pts}</ul>' if pts else ""
+            cls = "card tip gold" if t.get("highlight") else "card tip"
+            tb += f'<article class="{cls}"><h4>{e(t["title"])}</h4>{hl}{ul}</article>'
         tb += "</div>"
         if sec.get("sources"):
             src = " · ".join(f'<a href="{e(x["url"])}">{e(x["label"])}</a>' for x in sec["sources"])

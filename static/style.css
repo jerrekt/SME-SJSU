@@ -151,3 +151,6 @@ figure.qr img{width:220px;height:220px;padding:10px;background:#fff;border-radiu
 .tip h4{margin:0 0 6px;color:var(--navy);font-family:var(--display);font-size:20px;line-height:1.25}
 .tip ul.plain{margin:6px 0 0}
 .sources{font-size:13px;margin-top:14px;line-height:1.7}
+.tip.gold h4{color:#fff}
+.tip .highlight{margin:6px 0 0;font-size:17px;line-height:1.55}
+.tip.gold .highlight strong{color:var(--paper)}

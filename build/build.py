@@ -334,7 +334,10 @@ def build():
     tj = json.loads((ROOT / "data" / "tips.json").read_text(encoding="utf-8"))
     tb = f'<p class="lead">{e(tj["intro"])}</p>'
     for sec in tj["sections"]:
-        tb += f'<h3>{e(sec["title"])}</h3><div class="tips">'
+        tb += f'<h3>{e(sec["title"])}</h3>'
+        if sec.get("intro"):
+            tb += f'<p class="muted">{e(sec["intro"])}</p>'
+        tb += '<div class="tips">'
         for t in sec["tips"]:
             pts = "".join(f"<li>{e(x)}</li>" for x in t["points"])
             tb += f'<article class="card tip"><h4>{e(t["title"])}</h4><ul class="plain">{pts}</ul></article>'

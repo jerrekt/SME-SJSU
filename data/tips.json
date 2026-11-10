@@ -5,38 +5,39 @@
       "title": "Certifications: Lean Six Sigma belts",
       "tips": [
         {
-          "title": "The short answer: what to get as a manufacturing student",
+          "title": "What to get as a manufacturing student",
           "points": [
-            "1. Learn the tools in class first. Lean Manufacturing and Six Sigma (Tech 145) and QA/QC (Tech 31) cover most of a Green Belt's material: DMAIC, SIPOC, control charts, Gage R&R, root cause.",
-            "2. If you want a credential before you graduate, get a Green Belt from an exam-based body. IASSC is open to students: one proctored exam, no prerequisites, about $350.",
-            "3. Put a real project with a number next to it. A club or class project (\"cut changeover time 30%\") is worth more to a hiring manager than the belt itself.",
-            "4. After you are hired, get the next belt through your employer's program or ASQ, once you have the work experience they require."
+            "1. Learn the tools first. Tech 145 and Tech 31 cover most Green Belt material: DMAIC, SIPOC, control charts, Gage R&R, root cause analysis.",
+            "2. If you want a credential before you graduate, aim for a Green Belt from an issuer with a proctored exam. IASSC's Green Belt has no prerequisites, so students can take it.",
+            "3. Pair it with one project you can measure, from a class, club or internship. A result like \"cut changeover time 30%\" is the evidence employers ask about.",
+            "4. After you start working, look at your employer's belt program or ASQ, once you meet their experience requirements."
           ]
         },
         {
-          "title": "Why Green and not Black",
+          "title": "Why start with Green, not Black",
           "points": [
-            "Belts go White, Yellow, Green, Black, then Master Black Belt. A Green Belt matches what a new grad actually does: help on improvement projects and run the tools.",
-            "A Black Belt says you have led improvement projects. The Tech 145 and Tech 190 faculty we talked to, including one with years at Toyota, say a new grad with a Black Belt reads as overstated to experienced engineers. Engineers online say the same thing.",
-            "A Black Belt is still a real, recognized credential. It is just weak without led projects behind it, so it does not help as much as the name suggests."
+            "Belts usually go White, Yellow, Green, Black, then Master Black Belt. A Green Belt fits what new grads do: support improvement projects and use the tools.",
+            "A Black Belt suggests you have led improvement projects. Our Tech 145 and Tech 190 faculty, and many engineers in online discussions, say a new grad with a Black Belt but no led projects can look overstated.",
+            "That is a common view, not a universal hiring rule. A Black Belt is still a real credential; it just carries less weight without projects behind it."
           ]
         },
         {
-          "title": "Who issues it matters more than the color",
+          "title": "The issuer matters as much as the color",
           "points": [
-            "There is no single official Six Sigma body, so belts from different issuers are not equal. Quality engineers look at who issued it.",
-            "ASQ (CSSGB, CSSBB): the best-known in quality. The Green Belt requires 3 years of full-time work experience, so it is a goal for after graduation.",
-            "IASSC: exam-only, no prerequisites, proctored and closed book. The strongest belt a student can earn.",
-            "Online-only providers (for example MSI, the Management and Strategy Institute): online exam plus a project simulation, no real project required even for Black Belt, often discounted on deal sites. Real but light; it is worth about what it costs.",
-            "Employer-issued belts with a project on their own line carry the most weight with that employer and its industry."
+            "There is no single governing body for Six Sigma, so requirements differ a lot between issuers. Check what an exam and any project actually require.",
+            "ASQ Green Belt (CSSGB): requires 3 years of full-time, paid work experience in the subject, so most current students do not qualify yet. Exam about $383 (members) to $483.",
+            "IASSC Green Belt: no prerequisites; 100 questions, 3 hours, closed book, proctored online or at a test center; 70% to pass; $350 voucher.",
+            "MSI (Management and Strategy Institute) Green and Black Belt: online exam plus a required project simulation; no workplace project needed. A legitimate, lower-cost credential, but it shows you passed an exam, not that you ran a project.",
+            "Employer programs that require a project on their own line usually carry the most weight inside that company."
           ]
         },
         {
-          "title": "Already have a belt? How to show it",
+          "title": "Already have a belt? Show it honestly",
           "points": [
-            "Keep it. Put it in a Certifications section near the bottom of your resume, not at the top or in your headline. Our Tech 145 faculty source gives the same advice even for students holding a Black Belt.",
-            "Write the issuer and year, for example \"Lean Six Sigma Green Belt, IASSC, 2026\".",
-            "Be ready to talk through one project where you used the tools. That is what interviewers will ask about."
+            "Keep it, and list it in a Certifications section with the issuer and year, for example \"Lean Six Sigma Black Belt, Management and Strategy Institute, 2026\".",
+            "Place it below stronger evidence: projects, internships and work experience. Our Tech 145 faculty source gives this advice even for students who hold a Black Belt.",
+            "Do not imply you led workplace projects unless you did. If your belt included a simulation, call it that.",
+            "Be ready to walk through one real project where you used the tools."
           ]
         }
       ],
@@ -62,7 +63,7 @@
           "url": "https://www.reddit.com/r/SixSigma/comments/1l87577/what_i_wish_i_knew_before_choosing_a_six_sigma/"
         }
       ],
-      "intro": "Based on advice from SJSU faculty who teach Tech 145 (Lean Manufacturing and Six Sigma) and Tech 190 (Senior Project), one with years of industry experience at Toyota, combined with engineers' discussions online and the certifying bodies' own requirements."
+      "intro": "Based on advice from SJSU faculty who teach Tech 145 (Lean Manufacturing and Six Sigma) and Tech 190 (Senior Project). The Tech 190 professor has years of industry experience at Toyota. Combined with engineers' discussions online and each certifying body's published requirements."
     },
     {
       "title": "Classes and the major",
